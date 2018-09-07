@@ -7,4 +7,3 @@ def kwadraten_som(grondgetallen):
 
 getallen = [1,2,3,4,5,6,7,8,9,10]
 print(kwadraten_som(getallen))
-dd
