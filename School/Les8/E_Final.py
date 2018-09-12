@@ -31,6 +31,7 @@ def kluis_openen():
                 codecontrole = tekstcheck[1].replace("\n","")
                 if codecontrole == codecheck:
                     return "Je kluis is open"
+                file.close()
                 return "Foute code"
     return "Dit kluisnummer bestaat niet"
 def kluis_teruggeven():
@@ -55,14 +56,11 @@ def kluis_teruggeven():
                                 for a in save:
                                     file.write(a)
                             file.close()
-                            print(bezettekluizen)
-                            print(vrijekluizen)
-                        file.close()
                     file.close()
                     return "Je kluis is nu gereset"
                 return "Foute code"
     return "Dit kluisnummmer bestaat niet"
-
+    file.close()
 x = 1
 while x > 0:
     bezettekluizen.clear()
