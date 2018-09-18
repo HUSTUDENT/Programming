@@ -69,15 +69,12 @@ while x > 0:
         for kluizen in range(1, aantalkluizen + 1):
             try:
                 bezet = file.readlines(kluizen)[0][0]
+                bezettekluizen.append(int(bezet))
             except IndexError:
                 None
-            if str(kluizen) == bezet:
-                bezettekluizen.append(kluizen)
-            else:
+            if kluizen not in bezettekluizen:
                 vrijekluizen.append(kluizen)
         file.close()
-    print(vrijekluizen)
-    print(bezettekluizen)
     print("1: Ik wil weten hoeveel kluizen nog vrij zijn" + "\n" + "2: Ik wil een nieuwe kluis" + "\n" + "3: Ik wil even iets uit mijn kluis halen" + "\n" + "4: Ik geef mijn kluis terug" + "\n" + "5: Ik wil stoppen")
     keuze = input("Ik kies optie: ")
     if int(keuze) > 5:
