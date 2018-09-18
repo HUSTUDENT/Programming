@@ -1,11 +1,16 @@
 dict = {}
 def ticker(filename):
-    with open("bedrijven.txt","r+") as file:
+    with open(filename, "r+") as file:
         for x in file.readlines():
             y = x.split(":")
-            if y[0] == filename:
-                dict[y[0]] = y[1]
+            normal = y[1].replace("\n", "")
+            dict[y[0]] = normal
     file.close()
-    print(dict)
+    return dict
 
-ticker("YAHOO")
+bedrijfsnaam = input("Enter Company name: ")
+print("Ticker symbol: " + ticker("bedrijven.txt").get(bedrijfsnaam))
+tickernaam = input("Enter Ticker symbol: ")
+for z in ticker("bedrijven.txt"):
+    if ticker("bedrijven.txt").get(z) == tickernaam:
+        print("Company name: " + z)
