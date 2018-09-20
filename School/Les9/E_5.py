@@ -15,5 +15,4 @@ def namen():
             print("Er is " + aantalnaam + " student met de naam " + naam)
         else:
             print("Er zijn " + aantalnaam + " studenten met de naam " + naam)
-
 namen()
